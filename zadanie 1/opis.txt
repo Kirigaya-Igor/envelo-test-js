@@ -1,0 +1,55 @@
+HTML:
+
+1) <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'> - czconka tekstu
+
+2) to: backgroundColor: var(bg-color); zamieniam na to: background-color: var(--bg-color);
+
+3) <div className='hero'> - className piszemy np. w React, tu ma być: class='hero'
+
+4) <h1>Hero count: {heroCount}</h1> - JSX nie jest obsługiwany w zwykłym HTML
+
+5) <button onclick="Hero.train()">Power Up Hero</button> - trzeba dodać EventListener
+
+6) <script></script> - trzeba podać SRC
+
+
+
+JS:
+
+1) get getCurrentPowerCount() {
+        return this.#powerCount
+    }
+
+dodałem get
+
+2) wywoluje funkcje po ich deklaracji
+
+3) function getHero(newHero) {
+    heroCount++
+    document.querySelector('.hero > h1').innerHTML = `Hero count: ${heroCount}`
+    return new Hero(newHero)
+}
+
+dodałem parametr funkcji, camelCase, zwracam nowego bohatera, takoż zmieiam HTML aby pokazać ilość bohaterów
+
+4) spiderMan wyleciał po za funkcje print_hall_of_fame, aby można było z tej funkcji skorzystać ponownie
+
+5) const [name] = x : const {name} = x (destructuring object) 
+
+6) document.querySelector('#div') - przez # zwracamy się do ID, poprawnie: document.querySelector('div')
+
+7) `<p> ${name} </p> ${x.#powerCount} </p>`, nie zwracamy się do prywatnych pól bespośrednio : `<p> ${name} ${x.getCurrentPowerCount} </p>`
+
+8) const powerUpButton = document.querySelector('button')
+
+powerUpButton.addEventListener('click', () => {
+    heroes.forEach((x, i, arr) => {
+        x.train()
+    })
+
+    document.querySelectorAll('div > div').forEach((item) => item.parentNode.removeChild(item))
+    
+    print_hall_of_fame()
+})
+
+dodałem EventListener który zmienia #powerCount i wyświetla nową wartość

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="styles.css" rel="stylesheet" />
+    <title>Parcel Sandbox</title>
+</head>
+
+<body>
+    <div id="app" class="App">
+        <div class="content">
+            <h1 class="title">ENVELO</h1>
+            <span class="contentText">Możesz mieć swoją przesyłkę w kilkanaście sekund.</span>
+            <span class="contentText" style="margin-bottom: 25px;">Rozpocznij klikając w przycisk.</span>
+
+            <div>
+                <button class="startButton" id="button1">Odbierz paczkę</button>
+            </div>
+
+            <div id="screen2" class="screen2">
+                <div class="secondScreen">
+                    <div class="inputBlock">
+                        <div>
+                            <label for="phoneNumber">Numer telefonu:</label>
+                            <input type="text" id="phoneNumber" class="customInput" placeholder="123 123 123" />
+                        </div>
+                        <span id='phoneNumberError' class="spanError hide">Źle podałeś telefonu, dobry format: 123 123 123</span>
+                    </div>
+
+                    <div class="inputBlock">
+                        <div>
+                            <label for="packageKod">Kod odbioru:</label>
+                            <input type="number" id="packageKod" class="customInput" placeholder="0000" />
+                        </div>  
+                        <span id='packageKodError' class="spanError hide">Źle podałeś kod odbioru, dobry format: 0000</span>
+                    </div>
+                </div>
+                <button class="startButton" id="button2">Odbierz paczkę</button>
+            </div>
+        </div>
+
+        <div id="modalWindow" style="display: none;">
+            <div class="modalWindow">
+                <div class="modalWindowContent">
+                    <h1 class="title">Paczka odebrana!</h1>
+                    <span class="contentText">Zrobiłeś to w czasie 10 sekund!</span>
+                    <span class="contentText">Czy możemy zrobić dla ciebi coś jeszcze?</span>
+
+                    <div class="endButtons">
+                        <button class="endButton" id="endButton1">To wszystko na dziś</button>
+
+                        <button class="endButton" id="endButton2">Odbierz kolejną paczkę</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="index.js" type='text/javascript'></script>
+</body>
+
+</html>
